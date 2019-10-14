@@ -6,6 +6,36 @@
 
 #IncludeRegexTransform: 
 
+../src/cartesien.hpp
+point.hpp
+../src/point.hpp
+polaire.hpp
+../src/polaire.hpp
+
+../src/nuage.hpp
+vector
+-
+iterator
+-
+polaire.hpp
+../src/polaire.hpp
+cartesien.hpp
+../src/cartesien.hpp
+
+../src/point.hpp
+iostream
+-
+sstream
+-
+cmath
+-
+
+../src/polaire.hpp
+point.hpp
+../src/point.hpp
+cartesien.hpp
+../src/cartesien.hpp
+
 /home/thibaut/Documents/ZZ3/MODL/tp_2/src/cartesien.cpp
 cartesien.hpp
 /home/thibaut/Documents/ZZ3/MODL/tp_2/src/cartesien.hpp
@@ -466,5 +496,7 @@ cassert
 catch.hpp
 /home/thibaut/Documents/ZZ3/MODL/tp_2/test/catch.hpp
 cmath
+-
+nuage.hpp
 -
 

@@ -6,7 +6,39 @@
 
 #IncludeRegexTransform: 
 
+/home/thibaut/Documents/ZZ3/MODL/tp_2/src/cartesien.cpp
+cartesien.hpp
+/home/thibaut/Documents/ZZ3/MODL/tp_2/src/cartesien.hpp
+
+/home/thibaut/Documents/ZZ3/MODL/tp_2/src/cartesien.hpp
+point.hpp
+/home/thibaut/Documents/ZZ3/MODL/tp_2/src/point.hpp
+polaire.hpp
+/home/thibaut/Documents/ZZ3/MODL/tp_2/src/polaire.hpp
+
 /home/thibaut/Documents/ZZ3/MODL/tp_2/src/main_metaprog.cpp
 cstdlib
 -
+
+/home/thibaut/Documents/ZZ3/MODL/tp_2/src/point.cpp
+point.hpp
+/home/thibaut/Documents/ZZ3/MODL/tp_2/src/point.hpp
+
+/home/thibaut/Documents/ZZ3/MODL/tp_2/src/point.hpp
+iostream
+-
+sstream
+-
+cmath
+-
+
+/home/thibaut/Documents/ZZ3/MODL/tp_2/src/polaire.cpp
+polaire.hpp
+/home/thibaut/Documents/ZZ3/MODL/tp_2/src/polaire.hpp
+
+/home/thibaut/Documents/ZZ3/MODL/tp_2/src/polaire.hpp
+point.hpp
+/home/thibaut/Documents/ZZ3/MODL/tp_2/src/point.hpp
+cartesien.hpp
+/home/thibaut/Documents/ZZ3/MODL/tp_2/src/cartesien.hpp
 

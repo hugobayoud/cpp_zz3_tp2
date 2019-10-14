@@ -73,4 +73,17 @@ T barycentre_v1(Nuage<T> n){
     return T(Cartesien(x / nb, y / nb));
 }
 
+template<> Polaire barycentre_v1<Polaire>(Nuage<Polaire> n){
+    double a = 0.0, d = 0.0;
+    int nb = n.size();
+    for(typename Nuage<Polaire>::const_iterator it = n.begin(); it != n.end(); ++it){
+        a += it->getAngle();
+        d += it->getDistance();
+    }
+    if(nb == 0){
+        return Polaire(0.0, 0.0);
+    }   
+    return Polaire(a / nb, d / nb);
+}
+
 #endif

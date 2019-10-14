@@ -1,39 +1,24 @@
-#include "polaire.hpp"
+#ifndef POLAIRE_HPP
+#define POLAIRE_HPP
 
-Polaire::Polaire(double a, double d) : m_a(a), m_d(d){}
+#include "point.hpp"
+#include "cartesien.hpp"
 
-Polaire::Polaire(const Cartesien & c){
-    double x = c.getX();
-    double y = c.getY();
-    m_a = std::atan2(y, x) * 180 / M_PI;
-    m_d = std::sqrt(x * x + y * y);
-}
+class Polaire : public Point {
+    private:
+        double m_a;
+        double m_d;
 
-double Polaire::getAngle() const{
-    return m_a;
-}
+    public :
+        Polaire(double m_a = 0.0, double m_d = 0.0);
+        Polaire(const Cartesien & c);
+        double getAngle() const;
+        void setAngle(double a);
+        double getDistance() const;
+        void setDistance(double d);
+        void afficher(std::stringstream & flux) const;
+        virtual void convertir(Polaire & p) const;
+        virtual void convertir(Cartesien & c) const;
+};
 
-void Polaire::setAngle(double a){
-    m_a = a;
-}
-
-double Polaire::getDistance() const{
-    return m_d;
-}
-
-void Polaire::setDistance(double d){
-    m_d = d;
-}
-
-void Polaire::afficher(std::stringstream & flux) const{
-    flux << "(a=" << m_a << ";d=" << m_d << ")";
-}
-
-void Polaire::convertir(Polaire & p) const{
-    p = *this;
-}
-
-void Polaire::convertir(Cartesien & c) const{
-    c.setX(m_d * std::cos(m_a * M_PI /180));
-    c.setY(m_d * std::sin(m_a * M_PI /180));
-}
+#endif

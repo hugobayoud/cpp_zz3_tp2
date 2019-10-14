@@ -1,39 +1,24 @@
-#include "cartesien.hpp"
+#ifndef CARTESIEN_HPP
+#define CARTESIEN_HPP
 
-Cartesien::Cartesien(double x, double y) : m_x(x), m_y(y) {}
+#include "point.hpp"
+#include "polaire.hpp"
 
-Cartesien::Cartesien(const Polaire & p){
-    double d = p.getDistance();
-    double a = p.getAngle() * M_PI / 180;
-    m_x = d * std::cos(a);
-    m_y = d * std::sin(a);
-}
+class Cartesien : public Point{
+    private:
+        double m_x;
+        double m_y;
+    
+    public:
+        Cartesien(double x = 0.0, double y = 0.0);
+        Cartesien(const Polaire & p);
+        double getX() const;
+        void setX(double x);
+        double getY() const;
+        void setY(double y);
+        void afficher(std::stringstream& flux) const;
+        virtual void convertir(Polaire & p) const;
+        virtual void convertir(Cartesien & c) const;
+};
 
-double Cartesien::getX() const{
-    return m_x;
-}
-
-void Cartesien::setX(double x){
-    m_x = x;
-}
-
-double Cartesien::getY() const{
-    return m_y;
-}
-
-void Cartesien::setY(double y){
-    m_y = y;
-}
-
-void Cartesien::afficher(std::stringstream & flux) const{
-    flux << "(x=" << m_x << ";y=" << m_y << ")";
-}
-
-void Cartesien::convertir(Polaire & p) const{
-    p.setAngle(std::atan2(m_y, m_x) * 180 / M_PI);
-    p.setDistance(std::sqrt(m_x * m_x + m_y * m_y));
-}
-
-void Cartesien::convertir(Cartesien & c) const{
-    c = *this;
-}
+#endif

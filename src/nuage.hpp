@@ -17,6 +17,7 @@ class Nuage{
         Nuage();
         unsigned int size() const;
         void ajouter(T p);
+        typedef T value_type;
         iterator begin();
         const_iterator begin() const;
         iterator end();
@@ -84,6 +85,25 @@ template<> Polaire barycentre_v1<Polaire>(Nuage<Polaire> n){
         return Polaire(0.0, 0.0);
     }   
     return Polaire(a / nb, d / nb);
+}
+
+template <typename C>
+typename C::value_type barycentre_v2(C n){
+    typename C::value_type b;
+    double x = 0.0, y = 0.0;
+    int nb = n.size();
+    if(nb > 0){
+        Cartesien c;
+        for(typename C::const_iterator it = n.begin(); it != n.end(); ++it){
+            it->convertir(c);
+            x += c.getX();
+            y += c.getY();
+        }
+        c.setX(x / nb);
+        c.setY(y / nb);
+        c.convertir(b);
+    }
+    return b;
 }
 
 #endif
